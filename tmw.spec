@@ -4,8 +4,7 @@ Name:		tmw
 Version:	0.0.13
 Release:	0.1
 License:	GPL v2
-Group:		Game
-######		Unknown group!
+Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/themanaworld/%{name}-%{version}.tar.gz
 # Source0-md5:	0dd5be2e0a9204516852f69d9ad22e2e
 URL:		http://themanaworld.org/
