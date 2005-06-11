@@ -9,6 +9,10 @@ Source0:	http://dl.sourceforge.net/themanaworld/%{name}-%{version}.tar.gz
 # Source0-md5:	0dd5be2e0a9204516852f69d9ad22e2e
 URL:		http://themanaworld.org/
 BuildRequires:	guichan
+BuildRequires:	physfs-devel
+BuildRequires:	libxml2-devel
+BuildRequires:	SDL_image-devel
+BuildRequires:	SDL_mixer-devel
 Requires:	SDL_image
 Requires:	SDL_mixer
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
