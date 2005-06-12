@@ -8,12 +8,13 @@ Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/themanaworld/%{name}-%{version}.tar.gz
 # Source0-md5:	0dd5be2e0a9204516852f69d9ad22e2e
 URL:		http://themanaworld.org/
-BuildRequires:	guichan
-BuildRequires:	pkgconfig
-BuildRequires:	physfs-devel
-BuildRequires:	libxml2-devel
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
+BuildRequires:	guichan-devel
+BuildRequires:	libxml2-devel
+BuildRequires:	physfs-devel
+BuildRequires:	pkgconfig
+# should be autodetected
 Requires:	SDL_image
 Requires:	SDL_mixer
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -31,6 +32,18 @@ development. The eAthena free software Ragnarok Online server is used
 until our own server has matured enough to replace it. Once ready,
 we'll be making releases of our server too so anybody will be free to
 set up their own server and start building their own online world.
+
+%description -l pl
+The Mana World (TMW) to powa¿na próba stworzenia innowacyjnej darmowej
+gry MMORPG z otwartymi ¼ród³ami. TMW u¿ywa grafiki 2D i ma stworzyæ
+du¿y i ró¿norodny interaktywny ¶wiat. Jest licencjonowana na warunkach
+GPL, dziêki czemu nigdy nie zostanie zabrana.
+
+Projekt obejmuje rozwój zarówno klienta jak i serwera, a tak¿e
+tworzenie ¶wiata online. Aktualnie s± tworzone wydania alpha klienta,
+natomiast serwer jest we wczesnym etapie rozwoju. Do czasu osi±gniêcia
+dojrza³o¶ci serwera TMW u¿ywany jest darmowy serwer eAthena Ragnarok
+Onlune.
 
 %prep
 %setup -q
