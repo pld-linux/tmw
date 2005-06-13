@@ -43,7 +43,7 @@ Projekt obejmuje rozwój zarówno klienta jak i serwera, a tak¿e
 tworzenie ¶wiata online. Aktualnie s± tworzone wydania alpha klienta,
 natomiast serwer jest we wczesnym etapie rozwoju. Do czasu osi±gniêcia
 dojrza³o¶ci serwera TMW u¿ywany jest darmowy serwer eAthena Ragnarok
-Onlune.
+Online.
 
 %prep
 %setup -q
