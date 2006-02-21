@@ -10,6 +10,7 @@ Source0:	http://dl.sourceforge.net/themanaworld/%{name}-%{version}.tar.gz
 URL:		http://themanaworld.org/
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
+BuildRequires:	SDL_net-devel
 BuildRequires:	guichan-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	physfs-devel
@@ -17,6 +18,7 @@ BuildRequires:	pkgconfig
 # should be autodetected
 Requires:	SDL_image
 Requires:	SDL_mixer
+Requires:	SDL_net
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
