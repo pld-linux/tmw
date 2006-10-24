@@ -13,7 +13,7 @@ BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_net-devel
 BuildRequires:	autoconf
-BuildRequires:	automake >= 1.9
+BuildRequires:	automake >= 1:1.9
 BuildRequires:	curl-devel
 BuildRequires:	guichan-devel >= 0.5.0
 BuildRequires:	libxml2-devel
