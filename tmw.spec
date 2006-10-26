@@ -58,7 +58,7 @@ Online.
 %prep
 %setup -q
 %patch0 -p1
-%{?with_opengl:%patch1 -p0}
+%patch1 -p0
 
 %build
 %{__aclocal}
