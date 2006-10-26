@@ -62,8 +62,7 @@ Online.
 %{__autoheader}
 %{__automake}
 %configure
-%{__make} \
-	CFLAGS="%{rpmcflags}"
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
