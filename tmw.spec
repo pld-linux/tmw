@@ -1,14 +1,17 @@
+%bcond_without	opengl	#disable OpenGL support
 Summary:	A free Open Source 2D MMORPG
 Summary(pl):	Darmowa gra typu MMORPG 2D
 Name:		tmw
 Version:	0.0.21
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/themanaworld/%{name}-%{version}.tar.gz
 # Source0-md5:	e13a748b8e279fa694db5eb14ac4a8a9
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-OpenGL.patch
 URL:		http://themanaworld.org/
+%{?with_opengl:BuildRequires:	OpenGL-devel}
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_net-devel
@@ -55,13 +58,15 @@ Online.
 %prep
 %setup -q
 %patch0 -p1
+%{?with_opengl:%patch1 -p0}
 
 %build
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	%{?with_opengl:--with-opengl}
 %{__make}
 
 %install
