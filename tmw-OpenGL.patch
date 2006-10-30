@@ -1,12 +1,18 @@
---- src/resources/image.h	2006-10-26 17:01:41.076883272 +0200
-+++ src/resources/image.h-new	2006-10-26 17:01:56.607522256 +0200
-@@ -24,9 +24,9 @@
+--- src/resources/image.h.orig	2006-10-29 23:17:41.000000000 +0100
++++ src/resources/image.h	2006-10-30 15:59:28.705199088 +0100
+@@ -24,7 +24,7 @@
  #ifndef _TMW_IMAGE_H
  #define _TMW_IMAGE_H
  
 -#include <SDL.h>
 +#include <SDL/SDL.h>
  #ifdef USE_OPENGL
+ 
+ /* The definition of OpenGL extensions by SDL is giving problems with recent
+@@ -33,7 +33,7 @@
+  */
+ #define NO_SDL_GLEXT
+ 
 -#include <SDL_opengl.h>
 +#include <SDL/SDL_opengl.h>
  #endif
