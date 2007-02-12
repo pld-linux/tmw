@@ -1,6 +1,6 @@
 %bcond_without	opengl	#disable OpenGL support
 Summary:	A free Open Source 2D MMORPG
-Summary(pl.UTF-8):   Darmowa gra typu MMORPG 2D
+Summary(pl.UTF-8):	Darmowa gra typu MMORPG 2D
 Name:		tmw
 Version:	0.0.22.1
 Release:	1
