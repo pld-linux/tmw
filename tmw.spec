@@ -1,6 +1,6 @@
 %bcond_without	opengl	#disable OpenGL support
 Summary:	A free Open Source 2D MMORPG
-Summary(pl):	Darmowa gra typu MMORPG 2D
+Summary(pl.UTF-8):   Darmowa gra typu MMORPG 2D
 Name:		tmw
 Version:	0.0.22.1
 Release:	1
@@ -43,16 +43,16 @@ until our own server has matured enough to replace it. Once ready,
 we'll be making releases of our server too so anybody will be free to
 set up their own server and start building their own online world.
 
-%description -l pl
-The Mana World (TMW) to powa¿na próba stworzenia innowacyjnej darmowej
-gry MMORPG z otwartymi ¼ród³ami. TMW u¿ywa grafiki 2D i ma stworzyæ
-du¿y i ró¿norodny interaktywny ¶wiat. Jest licencjonowana na warunkach
-GPL, dziêki czemu nigdy nie zostanie zabrana.
+%description -l pl.UTF-8
+The Mana World (TMW) to powaÅ¼na prÃ³ba stworzenia innowacyjnej darmowej
+gry MMORPG z otwartymi ÅºrÃ³dÅ‚ami. TMW uÅ¼ywa grafiki 2D i ma stworzyÄ‡
+duÅ¼y i rÃ³Å¼norodny interaktywny Å›wiat. Jest licencjonowana na warunkach
+GPL, dziÄ™ki czemu nigdy nie zostanie zabrana.
 
-Projekt obejmuje rozwój zarówno klienta jak i serwera, a tak¿e
-tworzenie ¶wiata online. Aktualnie s± tworzone wydania alpha klienta,
-natomiast serwer jest we wczesnym etapie rozwoju. Do czasu osi±gniêcia
-dojrza³o¶ci serwera TMW u¿ywany jest darmowy serwer eAthena Ragnarok
+Projekt obejmuje rozwÃ³j zarÃ³wno klienta jak i serwera, a takÅ¼e
+tworzenie Å›wiata online. Aktualnie sÄ… tworzone wydania alpha klienta,
+natomiast serwer jest we wczesnym etapie rozwoju. Do czasu osiÄ…gniÄ™cia
+dojrzaÅ‚oÅ›ci serwera TMW uÅ¼ywany jest darmowy serwer eAthena Ragnarok
 Online.
 
 %prep
