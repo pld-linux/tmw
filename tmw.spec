@@ -2,12 +2,12 @@
 Summary:	A free Open Source 2D MMORPG
 Summary(pl.UTF-8):	Darmowa gra typu MMORPG 2D
 Name:		tmw
-Version:	0.0.22.2
-Release:	2
+Version:	0.0.23
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/themanaworld/%{name}-%{version}.tar.gz
-# Source0-md5:	c799a59487284b6812aae42c431b7103
+# Source0-md5:	4c4233a3b904dcf2935685e5ec1e6e5a
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-OpenGL.patch
 URL:		http://themanaworld.org/
@@ -18,7 +18,7 @@ BuildRequires:	SDL_net-devel
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	curl-devel
-BuildRequires:	guichan-devel >= 0.6.0
+BuildRequires:	guichan-devel >= 0.6.1
 BuildRequires:	libxml2-devel
 BuildRequires:	physfs-devel
 BuildRequires:	pkgconfig
@@ -84,4 +84,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/tmw
 %{_desktopdir}/tmw.desktop
+%{_mandir}/man6/%{name}.6*
 %{_pixmapsdir}/*
