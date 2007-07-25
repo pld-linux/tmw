@@ -10,6 +10,7 @@ Source0:	http://dl.sourceforge.net/themanaworld/%{name}-%{version}.tar.gz
 # Source0-md5:	4c4233a3b904dcf2935685e5ec1e6e5a
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-OpenGL.patch
+Patch2:		%{name}-guichan.patch
 URL:		http://themanaworld.org/
 %{?with_opengl:BuildRequires:	OpenGL-devel}
 BuildRequires:	SDL_image-devel
@@ -18,7 +19,7 @@ BuildRequires:	SDL_net-devel
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	curl-devel
-BuildRequires:	guichan-devel >= 0.6.1
+BuildRequires:	guichan-devel >= 0.7.0
 BuildRequires:	libxml2-devel
 BuildRequires:	physfs-devel
 BuildRequires:	pkgconfig
@@ -59,6 +60,7 @@ Online.
 %setup -q
 %patch0 -p1
 %patch1 -p0
+%patch2 -p1
 
 %build
 %{__aclocal}
