@@ -2,12 +2,12 @@
 Summary:	A free Open Source 2D MMORPG
 Summary(pl.UTF-8):	Darmowa gra typu MMORPG 2D
 Name:		tmw
-Version:	0.0.24
+Version:	0.0.24.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/themanaworld/%{name}-%{version}.tar.gz
-# Source0-md5:	d782ac4a73ac57b25df64efbe582b5ab
+# Source0-md5:	99eb83b6d37e2bd02fca48fa44e463e0
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-OpenGL.patch
 URL:		http://themanaworld.org/
