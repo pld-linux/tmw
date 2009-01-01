@@ -11,6 +11,7 @@ Source0:	http://dl.sourceforge.net/themanaworld/%{name}-%{version}.tar.gz
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-OpenGL.patch
 URL:		http://themanaworld.org/
+%{?with_opengl:BuildRequires:	OpenGL-GLU-devel}
 %{?with_opengl:BuildRequires:	OpenGL-devel}
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
@@ -22,11 +23,11 @@ BuildRequires:	guichan-devel >= 0.8.0
 BuildRequires:	libxml2-devel
 BuildRequires:	physfs-devel
 BuildRequires:	pkgconfig
-# should be autodetected
-Requires:	curl
 Requires:	SDL_image
 Requires:	SDL_mixer
 Requires:	SDL_net
+# should be autodetected
+Requires:	curl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -66,7 +67,7 @@ Online.
 %{__autoheader}
 %{__automake}
 %configure \
-	%{?with_opengl:--with-opengl}
+	--with%{!?with_opengl:out}-opengl
 %{__make}
 
 %install
