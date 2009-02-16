@@ -87,7 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
+%doc AUTHORS NEWS README
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/tmw
 %{_desktopdir}/tmw.desktop
