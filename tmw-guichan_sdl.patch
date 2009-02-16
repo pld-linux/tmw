@@ -1,0 +1,12 @@
+--- tmw-0.0.28.1/configure.ac~	2009-02-12 20:10:03.000000000 +0100
++++ tmw-0.0.28.1/configure.ac	2009-02-16 11:34:13.000000000 +0100
+@@ -85,8 +85,7 @@
+ AC_CHECK_LIB([SDL_mixer], [Mix_OpenAudio], ,
+ AC_MSG_ERROR([ *** Unable to find SDL_mixer library (http://www.libsdl.org/projects/SDL_mixer/)]))
+ 
+-AC_CHECK_LIB([guichan_sdl], [gcnSDL], ,
+-AC_MSG_ERROR([ *** Unable to find Guichan SDL library (http://guichan.sf.net/)]))
++LIBS="$LIBS -lguichan_sdl"
+ 
+ AC_CHECK_LIB(SDL_net, SDLNet_Init, ,
+ AC_MSG_ERROR([ *** Unable to find SDL_net library]))
