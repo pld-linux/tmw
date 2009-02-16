@@ -1,18 +1,16 @@
-#
-# TODO: - doesn't build because of guichan's libs undefined references
-#
 %bcond_without	opengl	#disable OpenGL support
 Summary:	A free Open Source 2D MMORPG
 Summary(pl.UTF-8):	Gra typu MMORPG 2D o otwartych źródłach
 Name:		tmw
-Version:	0.0.28
-Release:	0.1
+Version:	0.0.28.1
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/themanaworld/%{name}-%{version}.tar.gz
-# Source0-md5:	7d157a95e761ef7bee6f6a04645355ba
+# Source0-md5:	d92b06bb580df72587a668f97b8fd6a7
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-OpenGL.patch
+Patch2:		%{name}-guichan_sdl.patch
 URL:		http://themanaworld.org/
 %{?with_opengl:BuildRequires:	OpenGL-GLU-devel}
 %{?with_opengl:BuildRequires:	OpenGL-devel}
@@ -26,6 +24,7 @@ BuildRequires:	guichan-devel >= 0.8.0
 BuildRequires:	libxml2-devel
 BuildRequires:	physfs-devel
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.268
 Requires:	SDL_image
 Requires:	SDL_mixer
 Requires:	SDL_net
@@ -64,6 +63,7 @@ eAthena Ragnarok Online.
 %setup -q
 %patch0 -p1
 %patch1 -p0
+%patch2 -p1
 
 %build
 %{__aclocal} -I m4
@@ -80,10 +80,12 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%find_lang %{name} --all-name
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/*
