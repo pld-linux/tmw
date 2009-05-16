@@ -1,15 +1,15 @@
---- src/resources/image.h.orig	2006-10-29 23:17:41.000000000 +0100
-+++ src/resources/image.h	2006-10-30 15:59:28.705199088 +0100
-@@ -24,7 +24,7 @@
- #ifndef _TMW_IMAGE_H
- #define _TMW_IMAGE_H
+--- src/resources/image.h.orig	2009-04-15 20:55:29.000000000 +0200
++++ src/resources/image.h	2009-05-16 18:29:46.970326750 +0200
+@@ -26,7 +26,7 @@
+ 
+ #include "resources/resource.h"
  
 -#include <SDL.h>
 +#include <SDL/SDL.h>
+ 
  #ifdef USE_OPENGL
  
- /* The definition of OpenGL extensions by SDL is giving problems with recent
-@@ -33,7 +33,7 @@
+@@ -36,7 +36,7 @@
   */
  #define NO_SDL_GLEXT
  
@@ -17,4 +17,4 @@
 +#include <SDL/SDL_opengl.h>
  #endif
  
- #include "resource.h"
+ class Dye;

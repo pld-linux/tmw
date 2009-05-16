@@ -1,6 +1,6 @@
---- tmw-0.0.21/tmw.desktop~	2006-09-17 23:02:37.000000000 +0200
-+++ tmw-0.0.21/tmw.desktop	2006-10-24 17:42:02.000000000 +0200
-@@ -8,9 +8,11 @@
+--- tmw-0.0.29/tmw.desktop.orig	2009-05-10 16:34:37.000000000 +0200
++++ tmw-0.0.29/tmw.desktop	2009-05-16 18:25:36.110120117 +0200
+@@ -7,9 +7,11 @@
  Comment[de]=ein Online Fantasy Spiel
  Comment[it]=Un gioco fantasy online
  Comment[nl]=Een online role playing game
@@ -9,7 +9,7 @@
  StartupNotify=false
  Terminal=false
  Type=Application
- Icon=tmw.png
--Categories=Application;Game
-+Categories=Game;RolePlaying;
+ Icon=tmw
+-Categories=Application;Game;
++Categories=Categories=Game;RolePlaying;
 +# vi: encoding=utf-8
