@@ -21,7 +21,9 @@ BuildRequires:	SDL_ttf-devel
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	curl-devel
+BuildRequires:	gettext-devel
 BuildRequires:	guichan-devel >= 0.8.0
+BuildRequires:	libpng-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	physfs-devel
 BuildRequires:	pkgconfig
@@ -48,17 +50,16 @@ we'll be making releases of our server too so anybody will be free to
 set up their own server and start building their own online world.
 
 %description -l pl.UTF-8
-The Mana World (TMW) to poważna próba stworzenia innowacyjnej
-darmowej gry MMORPG z otwartymi źródłami. TMW używa grafiki 2D i
-ma stworzyć duży i różnorodny interaktywny świat. Jest
-licencjonowana na warunkach GPL, dzięki czemu nigdy nie zostanie
-zabrana.
+The Mana World (TMW) to poważna próba stworzenia innowacyjnej darmowej
+gry MMORPG z otwartymi źródłami. TMW używa grafiki 2D i ma stworzyć
+duży i różnorodny interaktywny świat. Jest licencjonowana na warunkach
+GPL, dzięki czemu nigdy nie zostanie zabrana.
 
 Projekt obejmuje rozwój zarówno klienta jak i serwera, a także
-tworzenie świata online. Aktualnie są tworzone wydania alpha
-klienta, natomiast serwer jest we wczesnym etapie rozwoju. Do czasu
-osiągnięcia dojrzałości serwera TMW używany jest darmowy serwer
-eAthena Ragnarok Online.
+tworzenie świata online. Aktualnie są tworzone wydania alpha klienta,
+natomiast serwer jest we wczesnym etapie rozwoju. Do czasu osiągnięcia
+dojrzałości serwera TMW używany jest darmowy serwer eAthena Ragnarok
+Online.
 
 %prep
 %setup -q
