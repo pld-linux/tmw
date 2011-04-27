@@ -1,11 +1,19 @@
---- tmw-0.0.29/tmw.desktop.orig	2009-05-10 16:34:37.000000000 +0200
-+++ tmw-0.0.29/tmw.desktop	2009-05-16 18:25:36.110120117 +0200
-@@ -7,9 +7,11 @@
+--- tmw-0.5.2/tmw.desktop~	2011-04-17 01:17:57.000000000 +0200
++++ tmw-0.5.2/tmw.desktop	2011-04-27 13:55:27.943333377 +0200
+@@ -1,17 +1,16 @@
+-#!/usr/bin/env xdg-open
+-
+ [Desktop Entry]
+-Version=1.0
+ Name=The Mana World
+ Comment=A 2D MMORPG client
+ Comment[fr]=Un jeu en ligne dans un univers fantastique
  Comment[de]=ein Online Fantasy Spiel
  Comment[it]=Un gioco fantasy online
  Comment[nl]=Een online role playing game
 +Comment[pl]=Internetowa gra fantasy RPG
- Exec=tmw
+ Comment[sv]=Ett fantasyrollspel online
+ Exec=mana tmw.mana
  StartupNotify=false
  Terminal=false
  Type=Application

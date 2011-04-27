@@ -2,24 +2,22 @@
 Summary:	A free Open Source 2D MMORPG
 Summary(pl.UTF-8):	Gra typu MMORPG 2D o otwartych źródłach
 Name:		tmw
-Version:	0.0.29.1
-Release:	2
+Version:	0.5.2
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://dl.sourceforge.net/themanaworld/%{name}-%{version}.tar.gz
-# Source0-md5:	263de26c8545a261c6b82b7ae639f733
+Source0:	http://downloads.sourceforge.net/themanaworld/%{name}-%{version}.tar.bz2
+# Source0-md5:	c843ef420aced82db1e51fa14e80174a
 Patch0:		%{name}-desktop.patch
-Patch1:		%{name}-OpenGL.patch
-Patch2:		%{name}-guichan_sdl.patch
 URL:		http://themanaworld.org/
 %{?with_opengl:BuildRequires:	OpenGL-GLU-devel}
 %{?with_opengl:BuildRequires:	OpenGL-devel}
+BuildRequires:	SDL_gfx-devel
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_net-devel
 BuildRequires:	SDL_ttf-devel
-BuildRequires:	autoconf
-BuildRequires:	automake >= 1:1.9
+BuildRequires:	cmake
 BuildRequires:	curl-devel
 BuildRequires:	gettext-devel
 BuildRequires:	guichan-devel >= 0.8.0
@@ -27,7 +25,7 @@ BuildRequires:	libpng-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	physfs-devel
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.268
+BuildRequires:	rpmbuild(macros) >= 1.600
 Requires:	SDL_image
 Requires:	SDL_mixer
 Requires:	SDL_net
@@ -62,24 +60,19 @@ dojrzałości serwera TMW używany jest darmowy serwer eAthena Ragnarok
 Online.
 
 %prep
-%setup -q
+%setup -q -c
 %patch0 -p1
-%patch1 -p0
-%patch2 -p1
 
 %build
-%{__aclocal} -I m4
-%{__autoconf}
-%{__autoheader}
-%{__automake}
-%configure \
-	--with%{!?with_opengl:out}-opengl
+install -d build
+cd build
+%cmake ..
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{name} --all-name
@@ -90,8 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README
-%attr(755,root,root) %{_bindir}/*
-%{_datadir}/tmw
-%{_desktopdir}/tmw.desktop
-%{_mandir}/man6/%{name}.6*
-%{_pixmapsdir}/*
+%attr(755,root,root) %{_bindir}/mana
+%{_datadir}/mana
+%{_desktopdir}/mana.desktop
+%{_pixmapsdir}/mana.png
