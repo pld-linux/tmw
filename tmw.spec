@@ -20,7 +20,7 @@ BuildRequires:	SDL_net-devel
 BuildRequires:	SDL_ttf-devel
 BuildRequires:	cmake
 BuildRequires:	curl-devel
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	guichan-devel >= 0.8.0
 BuildRequires:	libpng-devel
 BuildRequires:	libxml2-devel
