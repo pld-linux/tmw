@@ -1,37 +1,39 @@
-%bcond_without	opengl	#disable OpenGL support
+#
+# Conditional build:
+%bcond_without	opengl	# OpenGL support
+#
 Summary:	A free Open Source 2D MMORPG
 Summary(pl.UTF-8):	Gra typu MMORPG 2D o otwartych źródłach
 Name:		tmw
 Version:	0.5.2
-Release:	5
+Release:	6
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://downloads.sourceforge.net/themanaworld/%{name}-%{version}.tar.bz2
 # Source0-md5:	c843ef420aced82db1e51fa14e80174a
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-build.patch
+Patch2:		%{name}-link.patch
 URL:		http://themanaworld.org/
 %{?with_opengl:BuildRequires:	OpenGL-GLU-devel}
 %{?with_opengl:BuildRequires:	OpenGL-devel}
+BuildRequires:	SDL-devel
 BuildRequires:	SDL_gfx-devel
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_net-devel
 BuildRequires:	SDL_ttf-devel
-BuildRequires:	cmake
+BuildRequires:	cmake >= 2.6
 BuildRequires:	curl-devel
 BuildRequires:	gettext-tools
 BuildRequires:	guichan-devel >= 0.8.0
+BuildRequires:	guichan-sdl-devel >= 0.8.0
 BuildRequires:	libpng-devel
-BuildRequires:	libxml2-devel
+BuildRequires:	libxml2-devel >= 2
 BuildRequires:	physfs-devel
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.600
-Requires:	SDL_image
-Requires:	SDL_mixer
-Requires:	SDL_net
-# should be autodetected
-Requires:	curl
+BuildRequires:	rpmbuild(macros) >= 1.605
+BuildRequires:	xorg-lib-libX11-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -64,11 +66,13 @@ Online.
 %setup -q -c
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 install -d build
 cd build
-%cmake ..
+%cmake .. \
+	%{!?with_opengl:-DWITH_OPENGL=OFF}
 %{__make}
 
 %install
